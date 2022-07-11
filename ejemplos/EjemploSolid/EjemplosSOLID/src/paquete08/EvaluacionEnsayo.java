@@ -32,7 +32,7 @@ public class EvaluacionEnsayo implements EvaluacionTipoDos {
         return totalProblemas;
     }
     
-    
+   
     @Override
     public void establecerPromedioEnsayo() {
 
