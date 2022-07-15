@@ -45,7 +45,8 @@ public class ArchivoLectura {
 
             while (true) {
                 try {
-                    GeneradorPeliculas generador = (GeneradorPeliculas) entrada.readObject();
+                    GeneradorPeliculas generador = 
+                            (GeneradorPeliculas) entrada.readObject();
                     generadores.add(generador);
 
                 } catch (EOFException endOfFileException) {

@@ -28,9 +28,9 @@ public class ArchivoEscritura {
 
             salida = new ObjectOutputStream(
                     new FileOutputStream(nombreArchivo));
-            if (obtenerGeneradores().size() > 0) {
-                for (int i = 0; i < obtenerGeneradores().size(); i++) {
-                    establecerGeneradores(obtenerGeneradores().get(i));
+            if (obtenerListaGeneradores().size() > 0) {
+                for (int i = 0; i < obtenerListaGeneradores().size(); i++) {
+                    establecerGeneradores(obtenerListaGeneradores().get(i));
                     establecerSalida();
                 }
             }
@@ -47,27 +47,26 @@ public class ArchivoEscritura {
     public void establecerGeneradores(GeneradorPeliculas g) {
         registro = g;
     }
-        public void establecerSalida() {
+
+    public void establecerSalida() {
         try {
             salida.writeObject(registro);
         } catch (IOException ex) {
             System.out.println("Error al escribir en el archivo");
         }
     }
-    
-        public void establecerListaGeneradores() {
-        ArchivoLectura l =  new ArchivoLectura(obtenerNombreArchivo());
+
+    public void establecerListaGeneradores() {
+        ArchivoLectura l = new ArchivoLectura(obtenerNombreArchivo());
         l.establecerGeneradores();
         generadores = l.obtenerGeneradores();
     }
-
-
 
     public String obtenerNombreArchivo() {
         return nombreArchivo;
     }
 
-    public ArrayList<GeneradorPeliculas> obtenerGeneradores() {
+    public ArrayList<GeneradorPeliculas> obtenerListaGeneradores() {
         return generadores;
     }
 

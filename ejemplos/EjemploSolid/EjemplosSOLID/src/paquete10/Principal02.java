@@ -4,17 +4,16 @@
  */
 package paquete10;
 
-
 /**
  *
  * @author SALA I
  */
-public class Principal2 {
+public class Principal02 {
 
     public static void main(String[] args) {
         // Guardar los objetos de tipo Generador Pelicular en un 
         // archivo serializado
-        String nombreArchivo = "datos/propietarios.dat";
+        String nombreArchivo = "Generadores.data";
 
         APINetflix api = new APINetflix();
         api.establecerApiKey("123455");
@@ -62,9 +61,13 @@ public class Principal2 {
 
         ArchivoEscritura archivo = new ArchivoEscritura(nombreArchivo);
         archivo.establecerGeneradores(gp);
+        archivo.establecerSalida();
         archivo.establecerGeneradores(gp2);
+        archivo.establecerSalida();
         archivo.establecerGeneradores(gp3);
+        archivo.establecerSalida();
         archivo.establecerGeneradores(gp4);
+        archivo.establecerSalida();
 
     }
 }
